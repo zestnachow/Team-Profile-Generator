@@ -1,5 +1,7 @@
 # Team-Profile-Generator
 https://github.com/zestnachow/Team-Profile-Generator
+
+Walkthrough video link: https://drive.google.com/file/d/15sHsmnha8AHaMScMTVFe42xQEf9gYK3d/view
 # Description
 With this application, project managers can generate a simple HTML webpage that highlights each of their team members and their respective roles, while also providing some personal info for each employee.
 # Table of Contents
