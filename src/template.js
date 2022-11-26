@@ -88,7 +88,7 @@ const generatePage = (allCards) => {
 <body>
     <header>
         <nav class="navbar bg-black w-100 d-flex justify-content-center">
-            <h1 class="text-white mt-3">Team Profile Generator</h1>
+            <h1 class="text-white mt-3">My Team</h1>
         </nav>
     </header>
     <main>
