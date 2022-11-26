@@ -126,16 +126,17 @@ const createNewIntern = () => {
 const addNewTeamMember = () => {
     return inquirer.prompt([
         {
-            type: "checkbox",
+            type: "list",
             name: "newTeamMember",
             message: "Please select one of the following roles to add to your team:",
             choices: ["Engineer", "Intern", "My team is complete!"]
         }
     ])
     .then((res) => {
-        if (res.newTeamMember[0] === "Engineer") {
+        console.log(res);
+        if (res.newTeamMember === "Engineer") {
             createNewEngineer();
-        } else if (res.newTeamMember[0] === "Intern") {
+        } else if (res.newTeamMember === "Intern") {
             createNewIntern();
         } else {
             const template = generateCards(teamMembers);
