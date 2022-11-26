@@ -8,7 +8,7 @@ const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 
 // Importing HTML generation functionality
-const generatePage = require("./src/template");
+const generateCards = require("./src/template");
 
 const teamMembers = [];
 
@@ -138,8 +138,17 @@ const addNewTeamMember = () => {
         } else if (res.newTeamMember[0] === "Intern") {
             createNewIntern();
         } else {
-            generatePage(teamMembers);
+            const template = generateCards(teamMembers);
+            writeFile(template);
         }
+    })
+}
+
+// Writing HTML file
+const writeFile = (data) => {
+    fs.writeFile("./dist/index.html", data, err => {
+        console.log(data),
+        err ? console.log(err) : console.log("Your custom HTML file has been successfully created!");
     })
 }
 

@@ -1,43 +1,4 @@
-// Template literal for manager card
-const createManagerCard = (manager) => {
-    return `
-    `
-}
-
-// Template literal for engineer card
-const createEngineerCard = (engineer) => {
-    return ``
-}
-
-// Template literal for intern card
-const createInternCard = (intern) => {
-    return ``
-}
-
-// Function to generate requested cards based on user input
-const generateCards = (userResponses) => {
-    const cards = [];
-    for (let i = 0; i < userResponses.length; i++) {
-        const member = userResponses[i];
-        const memberRole = member.getRole();
-
-        if (memberRole === "Manager") {
-            const newManagerCard = createManagerCard(member);
-            cards.push(newManagerCard);
-        } else if (memberRole === "Engineer") {
-            const newEngineerCard = createEngineerCard(member);
-            cards.push(newEngineerCard);
-        } else if (memberRole === "Intern") {
-            const newInternCard = createInternCard(member);
-            cards.push(newInternCard);
-        }
-    }
-    const allCards = cards.join("");
-    return generatePage(allCards);
-}
-
-const generatePage = (allCards) => {
-    return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -59,7 +20,13 @@ const generatePage = (allCards) => {
                 ${allCards}
             </div>
         </div>
+        <div class="col-4 mt-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h3>$</h3>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
-</html>`;
-}
+</html>
