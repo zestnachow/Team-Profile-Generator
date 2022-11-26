@@ -83,7 +83,7 @@ const createNewEngineer = () => {
         );
         teamMembers.push(newEngineer);
         addNewTeamMember();
-    })
+    });
 }
 
 // Intern questions
@@ -119,5 +119,29 @@ const createNewIntern = () => {
         );
         teamMembers.push(newIntern);
         addNewTeamMember();
+    });
+}
+
+// Function to add members to the team
+const addNewTeamMember = () => {
+    return inquirer.prompt([
+        {
+            type: "checkbox",
+            name: "newTeamMember",
+            message: "Please select one of the following roles to add to your team:",
+            choices: ["Engineer", "Intern", "My team is complete!"]
+        }
+    ])
+    .then((res) => {
+        if (res.newTeamMember[0] === "Engineer") {
+            createNewEngineer();
+        } else if (res.newTeamMember[0] === "Intern") {
+            createNewIntern();
+        } else {
+            generatePage(teamMembers);
+        }
     })
 }
+
+// Calling createNewManager to kick off the application
+createNewManager();
