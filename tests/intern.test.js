@@ -10,7 +10,7 @@ describe("Intern", () => {
     });
     it("should return intern's school with getSchool method", () => {
         const intern = new Intern("Zach", 1, "zachpweston@gmail.com", "Amherst College");
-        const { school } = employee;
+        const { school } = intern;
         expect(intern.getSchool()).toBe(school);
     });
     it("should return role of Intern with getRole method", () => {

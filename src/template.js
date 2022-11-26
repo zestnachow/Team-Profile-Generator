@@ -28,7 +28,7 @@ const createEngineerCard = (engineer) => {
         <div class="card-body">
             <p class="id">ID: ${engineer.id}</p>
             <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-            <p class="github">Github: ${engineer.github}</p>
+            <p class="github">Github username: ${engineer.github}</p>
         </div>
     </div>
 </div>`;

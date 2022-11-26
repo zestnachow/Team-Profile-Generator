@@ -12,7 +12,7 @@ describe("Engineer", () => {
     it("should return the engineer's github username with getGithub method", () => {
         const engineer = new Engineer("Zach", 1, "zachpweston@gmail.com", "zestnachow");
         const { github } = engineer;
-        expect(engineer.getGithub()).tobe(github);
+        expect(engineer.getGithub()).toBe(github);
     });
     it("should return employee role of engineer with getRole method", () => {
         const engineer = new Engineer("Zach", 1, "zachpweston@gmail.com", "zestnachow");
