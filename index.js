@@ -85,3 +85,39 @@ const createNewEngineer = () => {
         addNewTeamMember();
     })
 }
+
+// Intern questions
+const createNewIntern = () => {
+    return inquirer.prompt([
+        {
+            type: "input",
+            name: "internName",
+            message: "What is this intern's name?"
+        },
+        {
+            type: "input",
+            name: "internId",
+            message: "What is this intern's ID number?"
+        },
+        {
+            type: "input",
+            name: "internEmail",
+            message: "What is this intern's email address?"
+        },
+        {
+            type: "input",
+            name: "internSchool",
+            message: "What school does this intern attend?"
+        },
+    ])
+    .then((intern) => {
+        const newIntern = new Intern(
+            intern.internName,
+            intern.internId,
+            intern.internEmail,
+            intern.internSchool
+        );
+        teamMembers.push(newIntern);
+        addNewTeamMember();
+    })
+}
